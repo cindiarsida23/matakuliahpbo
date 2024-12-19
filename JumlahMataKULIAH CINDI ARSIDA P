@@ -18,13 +18,13 @@ public class JumlahMataKULIAH {
         courseList = new ArrayList<>();
     }
 
-    // Menambahkan mata kuliah ke daftar
+
     public void addCourse(String course) {
         courseList.add(course);
         System.out.println(course + " telah ditambahkan.");
     }
 
-    // Mencari mata kuliah berdasarkan nama
+
     public void searchCourse(String courseName) {
         if (courseList.contains(courseName)) {
             System.out.println(courseName + " ditemukan di daftar.");
@@ -33,7 +33,7 @@ public class JumlahMataKULIAH {
         }
     }
 
-    // Menghitung jumlah mata kuliah
+
     public void countCourses() {
         System.out.println("Jumlah mata kuliah: " + courseList.size());
     }
@@ -50,7 +50,7 @@ public class JumlahMataKULIAH {
             System.out.println("4. Keluar");
             System.out.print("Pilih opsi: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan buffer
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
