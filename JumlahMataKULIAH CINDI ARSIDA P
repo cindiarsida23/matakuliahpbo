@@ -1,0 +1,80 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author ROG STRIX
+ */
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+    
+public class JumlahMataKULIAH {
+ private List<String> courseList;
+
+    public JumlahMataKULIAH() {
+        courseList = new ArrayList<>();
+    }
+
+    // Menambahkan mata kuliah ke daftar
+    public void addCourse(String course) {
+        courseList.add(course);
+        System.out.println(course + " telah ditambahkan.");
+    }
+
+    // Mencari mata kuliah berdasarkan nama
+    public void searchCourse(String courseName) {
+        if (courseList.contains(courseName)) {
+            System.out.println(courseName + " ditemukan di daftar.");
+        } else {
+            System.out.println(courseName + " tidak ditemukan.");
+        }
+    }
+
+    // Menghitung jumlah mata kuliah
+    public void countCourses() {
+        System.out.println("Jumlah mata kuliah: " + courseList.size());
+    }
+
+    public static void main(String[] args) {
+        JumlahMataKULIAH manager = new JumlahMataKULIAH();
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Tambah Mata Kuliah");
+            System.out.println("2. Cari Mata Kuliah");
+            System.out.println("3. Hitung Jumlah Mata Kuliah");
+            System.out.println("4. Keluar");
+            System.out.print("Pilih opsi: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Membersihkan buffer
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Masukkan nama mata kuliah: ");
+                    String course = scanner.nextLine();
+                    manager.addCourse(course);
+                    break;
+                case 2:
+                    System.out.print("Masukkan nama mata kuliah yang dicari: ");
+                    String courseName = scanner.nextLine();
+                    manager.searchCourse(courseName);
+                    break;
+                case 3:
+                    manager.countCourses();
+                    break;
+                case 4:
+                    System.out.println("Keluar dari program.");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Pilihan tidak valid. Coba lagi.");
+            }
+        }
+    }
+}
+
+    
